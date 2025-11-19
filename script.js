@@ -198,10 +198,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    let isManualInput = false;
+    
     document.getElementById('mobile').addEventListener('input', function(e) {
         let value = e.target.value.replace(/[^\d]/g, '');
         
-        if (value.length > 0 && !value.startsWith('01')) {
+        if (!isManualInput && value.length > 0 && !value.startsWith('01')) {
             value = '01' + value;
         }
         
@@ -216,6 +218,21 @@ document.addEventListener('DOMContentLoaded', function() {
             showAlert('দয়া করে সঠিক মোবাইল নাম্বার লিখুন (01XXXXXXXXX)', 'error');
         } else {
             this.classList.remove('error');
+        }
+    });
+
+    document.getElementById('mobile').addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' || e.key === 'Delete') {
+            isManualInput = true;
+            setTimeout(() => {
+                isManualInput = false;
+            }, 100);
+        }
+    });
+
+    document.getElementById('mobile').addEventListener('focus', function() {
+        if (this.value === '' || this.value === '01') {
+            this.setSelectionRange(2, 2);
         }
     });
 
