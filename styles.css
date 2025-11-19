@@ -11,8 +11,15 @@
     font-display: swap;
 }
 
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+
+* {
+    font-family: 'SolaimanLipi', 'Solaiman Lipi', 'Noto Sans Bengali', sans-serif !important;
+}
+
 body {
-    font-family: 'SolaimanLipi', 'Noto Sans Bengali', sans-serif;
+    font-family: 'SolaimanLipi', 'Solaiman Lipi', 'Noto Sans Bengali', sans-serif;
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
 }
@@ -48,7 +55,7 @@ body {
     padding: 12px 16px;
     transition: all 0.3s ease;
     width: 100%;
-    font-family: 'SolaimanLipi', 'Noto Sans Bengali', sans-serif;
+    font-family: 'SolaimanLipi', 'Solaiman Lipi', 'Noto Sans Bengali', sans-serif !important;
 }
 .input-field:focus {
     border-color: #3b82f6;
@@ -77,10 +84,10 @@ body {
     text-align: left !important;
 }
 select {
-    font-family: 'SolaimanLipi', 'Noto Sans Bengali', sans-serif;
+    font-family: 'SolaimanLipi', 'Solaiman Lipi', 'Noto Sans Bengali', sans-serif !important;
 }
 button {
-    font-family: 'SolaimanLipi', 'Noto Sans Bengali', sans-serif;
+    font-family: 'SolaimanLipi', 'Solaiman Lipi', 'Noto Sans Bengali', sans-serif !important;
 }
 .alert-message {
     position: fixed;
@@ -93,6 +100,7 @@ button {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     animation: slideIn 0.3s ease;
+    font-family: 'SolaimanLipi', 'Solaiman Lipi', 'Noto Sans Bengali', sans-serif !important;
 }
 @keyframes slideIn {
     from {
