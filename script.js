@@ -100,91 +100,136 @@ function generateDownloadImage() {
     const examCenter = document.getElementById('exam-center').textContent;
     const obtainedMarks = document.getElementById('obtained-marks').textContent;
     
+    
     const contentHTML = `
-        <div style="background: linear-gradient(135deg, #f59e0b 0%, #eab308 50%, #f59e0b 100%); color: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; text-align: center; box-shadow: 0 8px 20px rgba(245, 158, 11, 0.3);">
-            <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 8px;">অভিনন্দন!</h2>
-            <p style="font-size: 1.125rem; margin-bottom: 4px;">আপনি কিশোরকন্ঠ মেধাবৃত্তি পরীক্ষায় অংশগ্রহণ করেছেন</p>
-            <p style="font-size: 1.125rem;">আপনার ফলাফল নিচে দেখানো হলো</p>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
-            <div style="background-color: rgb(254 242 242); border-radius: 12px; padding: 20px; border: 1px solid rgb(220 38 38); border-left: 4px solid rgb(220 38 38);">
-                <h3 style="color: rgb(220 38 38); font-size: 1.2rem; margin-bottom: 16px; text-align: center; font-weight: 600;">ছাত্র/ছাত্রীর তথ্য</h3>
-                <div style="display: flex; flex-direction: column; gap: 16px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.1); gap: 16px;">
-                        <span style="font-weight: 600; flex: 0 0 40%; text-align: left;">নাম:</span>
-                        <span style="flex: 1; text-align: left; line-height: 1.5;">${studentName}</span>
+        <div style="background: white; color: black; padding: 20px; max-width: 100%; margin: 0 auto;">
+            <!-- Header -->
+            <div style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); color: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; text-align: center;">
+                <h1 style="font-size: 1.8rem; font-weight: bold; margin-bottom: 10px;">কিশোরকন্ঠ ফাউন্ডেশন</h1>
+                <h2 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 8px;">কিশোরকন্ঠ মেধাবৃত্তি পরীক্ষা ২০২৫</h2>
+                <p style="font-size: 1.1rem;">📍 রাজশাহী জেলা পশ্চিম</p>
+            </div>
+            
+            <!-- Congratulations -->
+            <div style="background: linear-gradient(135deg, #f59e0b 0%, #eab308 100%); color: white; border-radius: 12px; padding: 20px; margin-bottom: 20px; text-align: center;">
+                <h2 style="font-size: 1.5rem; font-weight: bold; margin-bottom: 8px;">অভিনন্দন!</h2>
+                <p style="font-size: 1.1rem;">আপনি কিশোরকন্ঠ মেধাবৃত্তি পরীক্ষায় অংশগ্রহণ করেছেন</p>
+            </div>
+            
+            <!-- Student Information - Single Column -->
+            <div style="background-color: rgb(254 242 242); border-radius: 12px; padding: 20px; border: 2px solid rgb(220 38 38); margin-bottom: 20px; text-align: center; width: 100%;">
+                <h3 style="color: rgb(220 38 38); font-size: 1.3rem; margin-bottom: 15px; font-weight: 600;">ছাত্র/ছাত্রীর তথ্য</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                        <span style="font-weight: 600; text-align: left; width: 45%;">নাম:</span>
+                        <span style="text-align: left; width: 55%;">${studentName}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.1); gap: 16px;">
-                        <span style="font-weight: 600; flex: 0 0 40%; text-align: left;">পিতার নাম:</span>
-                        <span style="flex: 1; text-align: left; line-height: 1.5;">${fatherName}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                        <span style="font-weight: 600; text-align: left; width: 45%;">পিতার নাম:</span>
+                        <span style="text-align: left; width: 55%;">${fatherName}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.1); gap: 16px;">
-                        <span style="font-weight: 600; flex: 0 0 40%; text-align: left;">রেজিস্ট্রেশন নাম্বার:</span>
-                        <span style="flex: 1; text-align: left; line-height: 1.5;">${regNumber}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                        <span style="font-weight: 600; text-align: left; width: 45%;">রেজিস্ট্রেশন নং:</span>
+                        <span style="text-align: left; width: 55%;">${regNumber}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.1); gap: 16px;">
-                        <span style="font-weight: 600; flex: 0 0 40%; text-align: left;">শ্রেণি:</span>
-                        <span style="flex: 1; text-align: left; line-height: 1.5;">${studentClass}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                        <span style="font-weight: 600; text-align: left; width: 45%;">শ্রেণি:</span>
+                        <span style="text-align: left; width: 55%;">${studentClass}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
-                        <span style="font-weight: 600; flex: 0 0 40%; text-align: left;">মোবাইল নাম্বার:</span>
-                        <span style="flex: 1; text-align: left; line-height: 1.5;">${studentMobile}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 0;">
+                        <span style="font-weight: 600; text-align: left; width: 45%;">মোবাইল নং:</span>
+                        <span style="text-align: left; width: 55%;">${studentMobile}</span>
                     </div>
                 </div>
             </div>
             
-            <div style="background-color: rgb(239 246 255); border-radius: 12px; padding: 20px; border: 1px solid #6d28d9; border-left: 4px solid #6d28d9;">
-                <h3 style="color: rgb(30 64 175); font-size: 1.2rem; margin-bottom: 16px; text-align: center; font-weight: 600;">প্রাতিষ্ঠানিক তথ্য</h3>
-                <div style="display: flex; flex-direction: column; gap: 16px;">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,0.1); gap: 16px;">
-                        <span style="font-weight: 600; flex: 0 0 20%; text-align: left;">বিদ্যালয়:</span>
-                        <span style="flex: 1; text-align: left; line-height: 1.5;">${schoolName}</span>
+            <!-- Institutional Information - Single Column -->
+            <div style="background-color: rgb(239 246 255); border-radius: 12px; padding: 20px; border: 2px solid #6d28d9; margin-bottom: 20px; text-align: center; width: 100%;">
+                <h3 style="color: rgb(30 64 175); font-size: 1.3rem; margin-bottom: 15px; font-weight: 600;">প্রাতিষ্ঠানিক তথ্য</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1);">
+                        <span style="font-weight: 600; text-align: left; width: 45%;">বিদ্যালয়:</span>
+                        <span style="text-align: left; width: 55%;">${schoolName}</span>
                     </div>
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;">
-                        <span style="font-weight: 600; flex: 0 0 20%; text-align: left;">পরীক্ষা কেন্দ্র:</span>
-                        <span style="flex: 1; text-align: left; line-height: 1.5;">${examCenter}</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 8px 0;">
+                        <span style="font-weight: 600; text-align: left; width: 45%;">পরীক্ষা কেন্দ্র:</span>
+                        <span style="text-align: left; width: 55%;">${examCenter}</span>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div style="margin-bottom: 24px;">
-            <div style="background-color: #F0FDF4; border-radius: 12px; padding: 20px; border: 1px solid #10B981; border-left: 4px solid #10B981; width: 100%;">
-                <h3 style="color: rgb(45, 172, 91); text-align: center; font-size: 1.2rem; margin-bottom: 16px; font-weight: 600;">প্রাপ্ত নম্বর</h3>
-                <p style="color: rgb(22 128 61); font-size: 2.5rem; font-weight: bold; margin: 0; text-align: center;">${obtainedMarks}</p>
+            
+            <!-- Marks -->
+            <div style="background-color: #F0FDF4; border-radius: 12px; padding: 25px; border: 2px solid #10B981; width: 100%; text-align: center; margin-bottom: 20px;">
+                <h3 style="color: rgb(45, 172, 91); font-size: 1.3rem; margin-bottom: 15px; font-weight: 600;">প্রাপ্ত নম্বর</h3>
+                <p style="color: rgb(22 128 61); font-size: 3rem; font-weight: bold; margin: 0;">${obtainedMarks}</p>
+            </div>
+            
+            <!-- Footer - Only one footer in download image -->
+            <div style="text-align: center; margin-top: 20px; padding-top: 15px; border-top: 1px solid #ccc;">
+                <p style="font-size: 11px; color: #666; margin-bottom: 5px;">এই সার্টিফিকেটটি কম্পিউটার দ্বারা জেনারেটেড হয়েছে</p>
+                <p style="font-size: 11px; color: #666; margin-bottom: 10px;">© ২০২৫ কিশোরকন্ঠ ফাউন্ডেশন - রাজশাহী জেলা পশ্চিম</p>
+                <div style="font-size: 11px; font-weight: bold; color: #1e40af; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 8px; border-radius: 8px; border-left: 4px solid #3b82f6;">
+                    এই সিস্টেমটি ডেভেলপ করেছেন আইটি বিভাগ - গোদাগাড়ী পশ্চিম সাংগঠনিক থানা শাখা
+                </div>
             </div>
         </div>
     `;
     
     captureContent.innerHTML = contentHTML;
     
+    
+    const captureFooter = captureContainer.querySelector('.print-capture-footer');
+    let originalFooterDisplay = '';
+    if (captureFooter) {
+        originalFooterDisplay = captureFooter.style.display;
+        captureFooter.style.display = 'none';
+    }
+    
     captureContainer.style.display = 'block';
     
-    html2canvas(captureContainer, {
-        scale: 2,
-        useCORS: true,
-        logging: false,
-        backgroundColor: null
-    }).then((canvas) => {
-        captureContainer.style.display = 'none';
-        
-        const imageUrl = canvas.toDataURL('image/jpeg', 0.95);
-        const downloadLink = document.createElement('a');
-        downloadLink.href = imageUrl;
-        downloadLink.download = 'kishore-kantha-result.jpg';
-        downloadLink.click();
-        
-        previewContainer.innerHTML = '';
-        const img = document.createElement('img');
-        img.src = imageUrl;
-        img.className = 'max-w-full h-auto border rounded-lg';
-        previewContainer.appendChild(img);
-    }).catch(error => {
-        console.error('Error generating download image:', error);
-        previewContainer.innerHTML = '<p class="text-red-500">ডাউনলোড তৈরি করতে সমস্যা হয়েছে। সরাসরি প্রিন্ট বাটন ব্যবহার করুন।</p>';
-        captureContainer.style.display = 'none';
-    });
+   
+    setTimeout(() => {
+        html2canvas(captureContainer, {
+            scale: 2,
+            useCORS: true,
+            logging: false,
+            backgroundColor: '#ffffff',
+            width: captureContainer.scrollWidth,
+            height: captureContainer.scrollHeight,
+            windowWidth: captureContainer.scrollWidth,
+            windowHeight: captureContainer.scrollHeight
+        }).then((canvas) => {
+            captureContainer.style.display = 'none';
+            
+            
+            if (captureFooter) {
+                captureFooter.style.display = originalFooterDisplay;
+            }
+            
+            const imageUrl = canvas.toDataURL('image/jpeg', 0.95);
+            const downloadLink = document.createElement('a');
+            downloadLink.href = imageUrl;
+            downloadLink.download = 'kishore-kantha-result.jpg';
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+            
+            previewContainer.innerHTML = '';
+            const img = document.createElement('img');
+            img.src = imageUrl;
+            img.className = 'max-w-full h-auto border rounded-lg';
+            previewContainer.appendChild(img);
+        }).catch(error => {
+            console.error('Error generating download image:', error);
+            previewContainer.innerHTML = '<p class="text-red-500">ডাউনলোড তৈরি করতে সমস্যা হয়েছে। সরাসরি প্রিন্ট বাটন ব্যবহার করুন।</p>';
+            captureContainer.style.display = 'none';
+            
+            
+            if (captureFooter) {
+                captureFooter.style.display = originalFooterDisplay;
+            }
+        });
+    }, 100);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -261,10 +306,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.getElementById('print-direct-btn').addEventListener('click', function() {
-        document.getElementById('results-section').classList.remove('hidden');
+        
+        const congratsContainer = document.querySelector('.congratulations-container');
+        const originalDisplay = congratsContainer.style.display;
+        congratsContainer.style.display = 'none';
+        
+       
+        document.querySelector('.print-header').style.display = 'block';
+        document.querySelector('.print-footer').style.display = 'block';
         
         setTimeout(() => {
             window.print();
+            
+            
+            setTimeout(() => {
+                congratsContainer.style.display = originalDisplay;
+                document.querySelector('.print-header').style.display = 'none';
+                document.querySelector('.print-footer').style.display = 'none';
+            }, 100);
         }, 100);
     });
 
